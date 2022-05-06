@@ -28,11 +28,18 @@ public class BeforeAspect {
 	 * Intercepts any return type, from PACKAGE, any class, all method calls,
 	 * irrespective of their parameters:
 	 * 
-	 * format: execution(* PACKAGE.*.*(..))
+	 * Format: execution(* PACKAGE.*.*(..))
+	 * 
+	 * However, this intercepts any calls inside of springaop package (2 dots):
+	 * 
+	 * @Before("execution(* com.worthen.cody.springaop..*.*(..))")
 	 */
 	@Before("execution(* com.worthen.cody.springaop.business.*.*(..))")
-	public void before(JoinPoint joinPoint) { // JoinPoint gives us the details
-		LOGGER.info("Intercepted Method Calls: {}", joinPoint);
+	public void before(JoinPoint joinPoint) { // JoinPoint gives us the tracing details
+
+		// what we do during an intercept is called an "Advice"
+		LOGGER.info("*** Check for user access:");
+		LOGGER.info("*** Allowed execution for: {}", joinPoint);
 	}
 
 }

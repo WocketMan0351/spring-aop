@@ -34,7 +34,9 @@ public class BeforeAspect {
 	 * 
 	 * @Before("execution(* com.worthen.cody.springaop..*.*(..))")
 	 */
-	@Before("execution(* com.worthen.cody.springaop.business.*.*(..))")
+	// we could also use our CommonJoinPointConfig instead:
+//	@Before("com.worthen.cody.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")
+	@Before("execution(* com.worthen.cody.springaop.data.*.*(..))")
 	public void before(JoinPoint joinPoint) { // JoinPoint gives us the tracing details
 
 		// what we do during an intercept is called an "Advice"

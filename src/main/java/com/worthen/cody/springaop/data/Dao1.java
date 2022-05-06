@@ -1,12 +1,12 @@
-package com.worthen.cody.springaop;
+package com.worthen.cody.springaop.data;
 
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class Dao2 {
+public class Dao1 {
 
 	public String retrieveSomething() {
-		return "Dao2";
+		return "Dao1";
 	}
 
 }

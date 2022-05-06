@@ -16,10 +16,12 @@ public class MetricsAspect {
 	/**
 	 * Format: execution(* PACKAGE.*.*(..))
 	 * 
-	 * @throws Throwable
+	 * Use our CommonJoinPointConfig for re-usability/brevity
+	 * 
+	 * only track execution time of methods that have our own custom @TrackTime
+	 * annotation
 	 */
-	// we can also use our CommonJoinPointConfig for re-usability
-	@Around("com.worthen.cody.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
+	@Around("com.worthen.cody.springaop.aspect.CommonJoinPointConfig.trackTimeAnnotation()")
 	public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 
 		// find the method execution time here rather than all over your code

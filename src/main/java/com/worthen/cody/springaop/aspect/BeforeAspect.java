@@ -25,6 +25,9 @@ public class BeforeAspect {
 	 * this method needs to be called before the execution of another method we pass
 	 * in a "pointcutter"
 	 * 
+	 * Intercepts any return type, from PACKAGE, any class, all method calls,
+	 * irrespective of their parameters:
+	 * 
 	 * format: execution(* PACKAGE.*.*(..))
 	 */
 	@Before("execution(* com.worthen.cody.springaop.business.*.*(..))")

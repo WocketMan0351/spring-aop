@@ -17,7 +17,7 @@ import com.worthen.cody.springaop.business.Business2;
  */
 
 @SpringBootApplication
-public class AfterAopAspect implements CommandLineRunner {
+public class SpringAopApplication implements CommandLineRunner {
 
 	private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
@@ -28,7 +28,7 @@ public class AfterAopAspect implements CommandLineRunner {
 	private Business2 business2;
 
 	public static void main(String[] args) {
-		SpringApplication.run(AfterAopAspect.class, args);
+		SpringApplication.run(SpringAopApplication.class, args);
 	}
 
 	// we can get the beans through the CommandLineRunner interface instead of the
